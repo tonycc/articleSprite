@@ -1,0 +1,330 @@
+.article-sprite-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(224, 215, 215);
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.article-sprite-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+}
+
+.article-sprite-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: all 0.3s;
+}
+
+.article-sprite-close:hover {
+    color: #333;
+}
+
+.article-sprite-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.article-sprite-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 24px;
+    width: 900px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    
+}
+
+.article-sprite-content h2 {
+    margin: 0 0 24px 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.article-content-wrapper {
+    padding-top: 16px;
+}
+
+.article-sprite-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+.article-sprite-actions {
+    position: absolute;
+    right: calc(50% - 450px - 200px);
+    top: 24px;
+    transform: translateY(-50%);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000000;
+}
+
+.article-sprite-button {
+    background-color: rgba(24, 144, 255, 0.9);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 12px 20px;
+    transition: all 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.article-sprite-button:hover {
+    background-color: rgb(24, 144, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-sprite-progress {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 16px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000001;
+}
+
+.article-sprite-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1890ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 内容样式优化 */
+.article-sprite-content p {
+    margin: 16px 0;
+    color: #444;
+}
+
+.article-sprite-content a {
+    color: #1890ff;
+    text-decoration: none;
+}
+
+.article-sprite-content a:hover {
+    text-decoration: underline;
+}
+
+.article-sprite-content blockquote {
+    margin: 16px 0;
+    padding: 12px 24px;
+    border-left: 4px solid #1890ff;
+    background-color: #f8f9fa;
+    color: #666;
+}
+
+.article-sprite-content ul,
+.article-sprite-content ol {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.article-sprite-content li {
+    margin: 8px 0;
+    color: #444;
+}
+
+.article-sprite-content code {
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #e83e8c;
+}
+
+.article-sprite-content pre {
+    background-color: #f8f9fa;
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.article-sprite-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+}
+
+/* 添加滚动条样式 */
+.article-sprite-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.article-sprite-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.article-sprite-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.article-sprite-content::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.article-sprite-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.article-sprite-dialog .dialog-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-sprite-dialog .dialog-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.article-sprite-dialog button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.article-sprite-dialog .confirm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.article-sprite-dialog .confirm:hover {
+    background-color: #45a049;
+}
+
+.article-sprite-dialog .cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+.article-sprite-dialog .cancel:hover {
+    background-color: #da190b;
+}
+
+.article-sprite-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    z-index: 10001;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.article-sprite-notification.success {
+    background-color: #4CAF50;
+}
+
+.article-sprite-notification.error {
+    background-color: #f44336;
+}
+
+.article-sprite-notification.info {
+    background-color: #2196F3;
+}
+
+.article-sprite-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    color: white;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
